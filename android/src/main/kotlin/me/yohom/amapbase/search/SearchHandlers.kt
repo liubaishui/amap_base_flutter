@@ -284,7 +284,11 @@ object CalculateDriveRoute : SearchMethodHandler {
 }
 
 object DistanceSearchHandler : SearchMethodHandler {
-    override fun onMethodCall(call: MethodCall, result: MethodChannel.Result?) {
+//    override fun onMethodCall(p0: MethodCall, p1: MethodChannel.Result) {
+//        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+//    }
+
+    override fun onMethodCall(p0: MethodCall, p1: MethodChannel.Result) {
         val search = DistanceSearch(AMapBasePlugin.registrar.context())
         search.setDistanceSearchListener { distanceResult, i ->
             search.setDistanceSearchListener(null)
@@ -292,15 +296,15 @@ object DistanceSearchHandler : SearchMethodHandler {
                 val list = distanceResult.distanceResults.map {
                     it.distance.toInt()
                 }
-                result?.success(list)
+                p1.success(list)
             } else {
-                result?.error("测量失败 code ==> $i", null, null)
+                p1.error("测量失败 code ==> $i", null, null)
             }
         }
 
-        val origins = call.argument<List<Map<String, Any>>>("origin")!!
-        val target = call.argument<Map<String, Any>>("target")!!
-        val type = call.argument<Int>("type")!!
+        val origins = p0.argument<List<Map<String, Any>>>("origin")!!
+        val target = p0.argument<Map<String, Any>>("target")!!
+        val type = p0.argument<Int>("type")!!
 
         search.calculateRouteDistanceAsyn(DistanceSearch.DistanceQuery().apply {
             this.origins = origins.map {
