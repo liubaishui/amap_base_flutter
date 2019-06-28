@@ -14,7 +14,8 @@ import me.yohom.amapbasesearch.AMapBaseSearchPlugin
 import me.yohom.amapbasesearch.AMapBaseSearchPlugin.Companion.registrar
 import me.yohom.amapbasesearch.SearchMethodHandler
 import me.yohom.amapbasesearch.common.*
-
+import com.amap.api.services.help.Inputtips
+import com.amap.api.services.help.InputtipsQuery
 
 /**
  * 逆地理编码（坐标转地址）
@@ -385,3 +386,21 @@ object SearchBusStation : SearchMethodHandler {
                 }
     }
 }
+
+object RequestInputTipsHandler : SearchMethodHandler {
+
+    override fun onMethodCall(methodcall : MethodCall, methodResult: MethodChannel.Result){
+        val city = methodcall.argument<String>("city") ?: ""
+        val keyText = methodcall.argument<String>("keywords") ?:""
+        val tips = Inputtips(AMapBaseSearchPlugin.registrar.context(),InputtipsQuery(keyText,city))
+        tips.setInputtipsListener{
+            list,code ->
+            if(code == 1000){
+                methodResult?.success(list.toAccessorJson())
+            } else {
+                methodResult?.error("请求输入提示失败 code ==> $code",null,null)
+            }
+        }
+
+        tips.requestInputtipsAsyn()
+    }
