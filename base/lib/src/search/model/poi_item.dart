@@ -1,10 +1,10 @@
 import 'dart:convert';
 
-import 'package:amap_base/src/map/model/latlng.dart';
-import 'package:amap_base/src/search/model/indoor_data.dart';
-import 'package:amap_base/src/search/model/photo.dart';
-import 'package:amap_base/src/search/model/poi_extension.dart';
-import 'package:amap_base/src/search/model/sub_poi_item.dart';
+import '../../../amap_base.dart';
+import 'indoor_data.dart';
+import 'photo.dart';
+import 'poi_extension.dart';
+import 'sub_poi_item.dart';
 
 class PoiItem {
   /// POI全局唯一ID [Android, iOS]

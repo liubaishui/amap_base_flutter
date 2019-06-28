@@ -43,7 +43,7 @@ class _LocationDemoState extends State<LocationDemo>
                     locatingWithReGeocode: true,
                   );
 
-                  if (await Permissions().requestPermission()) {
+                  if (await Permissions.requestMapPermission()) {
                     _amapLocation
                         .getLocation(options)
                         .then(_result.add)
@@ -62,7 +62,7 @@ class _LocationDemoState extends State<LocationDemo>
                     locatingWithReGeocode: true,
                   );
 
-                  if (await Permissions().requestPermission()) {
+                  if (await Permissions.requestMapPermission()) {
                     _amapLocation
                         .startLocate(options)
                         .map(_result.add)

@@ -1,10 +1,9 @@
 import 'dart:convert';
 
-import 'package:amap_base/amap_base.dart';
-import 'package:amap_base/src/search/model/poi_item.dart';
-import 'package:amap_base/src/search/model/poi_query.dart';
-import 'package:amap_base/src/search/model/search_bound.dart';
-import 'package:amap_base/src/search/model/suggestion_city.dart';
+import '../../../amap_base.dart';
+import 'bus_station_result.dart';
+import 'poi_item.dart';
+import 'suggestion_city.dart';
 
 class PoiResult {
   /// 返回的POI数目 [Android, iOS]

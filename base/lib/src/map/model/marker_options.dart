@@ -1,8 +1,9 @@
 import 'dart:convert';
 
-import 'package:amap_base/amap_base.dart';
-import 'package:amap_base/src/common/misc.dart';
 import 'package:meta/meta.dart';
+
+import '../../../amap_base.dart';
+import '../../common/misc.dart';
 
 class MarkerOptions {
   /// Marker覆盖物的图标 [Android, iOS]

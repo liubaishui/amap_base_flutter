@@ -1,4 +1,4 @@
-import 'package:amap_base/src/search/model_ios/district.ios.dart';
+import 'district.ios.dart';
 
 // ignore: camel_case_types
 class City_iOS {

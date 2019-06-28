@@ -1,6 +1,7 @@
 import 'dart:convert';
 
-import 'package:amap_base/amap_base.dart';
+
+import '../../../amap_base.dart';
 
 class UiSettings {
   /// 是否允许显示缩放按钮 [Android]

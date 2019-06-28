@@ -1,7 +1,8 @@
 import 'dart:convert';
 
-import 'package:amap_base/amap_base.dart';
 import 'package:meta/meta.dart';
+
+import '../../../amap_base.dart';
 
 class RoutePoiSearchQuery {
   LatLng from;

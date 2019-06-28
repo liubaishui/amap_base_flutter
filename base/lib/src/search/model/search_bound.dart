@@ -1,4 +1,4 @@
-import 'package:amap_base/amap_base.dart';
+import '../../../amap_base.dart';
 
 class SearchBound {
   /// 左下

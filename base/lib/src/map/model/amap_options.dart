@@ -1,6 +1,7 @@
 import 'dart:convert';
 
-import 'package:amap_base/src/map/model/camera_position.dart';
+
+import '../../../amap_base.dart';
 
 /// 缩放按钮右边界中部
 const ZOOM_POSITION_RIGHT_CENTER = 1;

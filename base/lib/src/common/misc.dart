@@ -1,9 +1,11 @@
 import 'dart:collection';
 import 'dart:io';
 
-import 'package:amap_base/amap_base.dart';
-import 'package:amap_base/src/common/log.dart';
+// import 'package:amap_base/amap_base.dart';
+// import 'package:amap_base/src/common/log.dart';
 import 'package:flutter/material.dart';
+import '../../src/common/log.dart';
+import '../../amap_base.dart';
 
 double devicePixelRatio = 1;
 

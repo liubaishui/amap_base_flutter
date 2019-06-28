@@ -1,7 +1,7 @@
 import 'dart:convert';
 
-import 'package:amap_base/src/map/model/latlng.dart';
-import 'package:amap_base/src/search/model/poi_item.dart';
+import '../../../amap_base.dart';
+import 'poi_item.dart';
 
 class ReGeocodeResult {
   RegeocodeAddress regeocodeAddress;

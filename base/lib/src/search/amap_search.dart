@@ -1,15 +1,14 @@
 import 'dart:convert';
 import 'dart:io';
 
-import 'package:amap_base/amap_base.dart';
-import 'package:amap_base/src/common/log.dart';
-import 'package:amap_base/src/search/model/bus_station_result.dart';
-import 'package:amap_base/src/search/model/drive_route_result.dart';
-import 'package:amap_base/src/search/model/poi_item.dart';
-import 'package:amap_base/src/search/model/poi_result.dart';
-import 'package:amap_base/src/search/model/regeocode_result.dart';
-import 'package:amap_base/src/search/model_ios/bus_station_result.ios.dart';
 import 'package:flutter/services.dart';
+import '../../src/common/log.dart';
+
+import '../../amap_base.dart';
+import 'model/bus_station_result.dart';
+import 'model/poi_item.dart';
+import 'model/poi_result.dart';
+import 'model_ios/bus_station_result.ios.dart';
 
 class AMapSearch {
   static AMapSearch _instance;

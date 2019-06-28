@@ -1,9 +1,10 @@
 import 'dart:convert';
 import 'dart:ui';
 
-import 'package:amap_base/amap_base.dart';
 import 'package:flutter/material.dart';
 import 'package:meta/meta.dart';
+
+import '../../../amap_base.dart';
 
 class PolylineOptions {
   static const DOTTED_LINE_TYPE_CIRCLE = 1;

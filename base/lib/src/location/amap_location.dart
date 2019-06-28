@@ -1,10 +1,13 @@
 import 'dart:async';
 import 'dart:convert';
 
-import 'package:amap_base/src/common/log.dart';
-import 'package:amap_base/src/location/model/location.dart';
-import 'package:amap_base/src/location/model/location_client_options.dart';
+// import 'package:amap_base/src/common/log.dart';
+// import 'package:amap_base/src/location/model/location.dart';
+// import 'package:amap_base/src/location/model/location_client_options.dart';
 import 'package:flutter/services.dart';
+import '../../src/common/log.dart';
+
+import '../../amap_base.dart';
 
 class AMapLocation {
   static AMapLocation _instance;
