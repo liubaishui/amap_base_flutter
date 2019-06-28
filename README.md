@@ -25,6 +25,15 @@ amap_base:
     url: https://github.com/yohom/amap_base_flutter.git
     ref: 0.0.1/branch/commit
 ```
+**Android项目默认集成了androidx, 如果要使用android-support库的话, 使用android-support-library分支!**
+使用方法:
+```
+amap_base:
+    git:
+      url: https://github.com/yohom/amap_base_flutter.git
+      ref: android-support-library
+      path: base(/map/location/search/navi)
+```
 导入:
 ```
 import 'package:amap_base/amap_base.dart';
@@ -49,11 +58,11 @@ iOS端的`UiKitView`目前还只是preview状态, 默认是不支持的, 需要�
 端又没有去抄Google Map的设计, 导致需要额外的工作去兼容两个平台的功能. 这个库的目标是尽可能的统一双端的api设置, 采用取各自平台api的**并集**, 然后在文档中指出针对哪个平台有效的策略来实现api统一.
 
 ## 关于包的大小
-- 目前已经按照高德提供的各个子包, 分出了4个分支(2d地图没有支持计划).
-    - `feature/map`分支依赖了高德3DMap库.
-    - `feature/location`分支依赖了高德Location库.
-    - `feature/navi`分支依赖了高德Navi库(Navi库包含了3DMap库, 不要重复引用Navi库和3DMap库!).
-    - `feature/search`分支依赖了高德Search库.
+- 目前已经按照高德提供的各个子包, 分出了4个子工程(2d地图没有支持计划).
+    - `map`工程依赖了高德3DMap库.
+    - `location`工程依赖了高德Location库.
+    - `navi`工程依赖了高德Navi库(Navi库包含了3DMap库, 不要重复引用Navi库和3DMap库!).
+    - `search`工程依赖了高德Search库.
 
 ## 关于Swift项目
 - Swift项目需要注释掉Podfile中的`use_framework!`. 尝试了在podspec中添加`s.static_framework = true`, 但是会造成找不到pod里的头文件. 如果有更好的解决方案, 请告知我.
@@ -124,7 +133,7 @@ iOS端的`UiKitView`目前还只是preview状态, 默认是不支持的, 需要�
         * [ ] 获取交通态势信息
     * [ ] 出行线路规划
         * [x] 驾车出行路线规划
-        * [ ] 步行出行路线规划
+        * [x] 步行出行路线规划
         * [ ] 公交出行路线规划
         * [ ] 骑行出行路线规划
         * [ ] 货车出行路线规划
@@ -154,3 +163,21 @@ iOS端的`UiKitView`目前还只是preview状态, 默认是不支持的, 需要�
     * [ ] 辅助功能
         * [ ] 地理围栏
         * [ ] 坐标转换与位置判断
+        
+## 捐赠
+<img src="./other/1557492318.jpg" height="300">  <img src="./other/WechatIMG111.jpeg" height="300">
+
+## LICENSE
+> Copyright 2018 yohom
+>   
+> Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+>
+>    http://www.apache.org/licenses/LICENSE-2.0
+> 
+>  Unless required by applicable law or agreed to in writing, software
+>  distributed under the License is distributed on an "AS IS" BASIS,
+>  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+>  See the License for the specific language governing permissions and
+>  limitations under the License.
