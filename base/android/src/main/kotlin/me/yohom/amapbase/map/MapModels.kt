@@ -5,6 +5,7 @@ import com.amap.api.maps.AMap
 import com.amap.api.maps.AMapOptions
 import com.amap.api.maps.CameraUpdateFactory
 import com.amap.api.maps.model.*
+import com.amap.api.maps.model.Marker
 import me.yohom.amapbase.common.hexStringToColorInt
 import java.util.*
 
@@ -123,8 +124,8 @@ class UnifiedMarkerOptions(
     )
 
     fun applyTo(map: AMap) {
-        map.addMarker(toMarkerOption())
-
+        val marker = map.addMarker(toMarkerOption())
+        marker.showInfoWindow()
         map.animateCamera(CameraUpdateFactory.newLatLngBounds(LatLngBounds.builder().include(position).build(), 100))
     }
 
@@ -254,6 +255,33 @@ class UnifiedPolylineOptions(
 
 }
 
+class UnifiedCircleOptions(
+        /// 中心点
+        private val center: LatLng,
+        /// 填充颜色
+        val fillColor: String,
+        /// 边框的颜色
+        val strokeColor: String,
+        /// 半径
+        private val radius: Int,
+        /// 线宽
+        private val strokeWidth: Int
+
+) {
+//		circle = aMap.addCircle(new CircleOptions().center(Constants.BEIJING)
+//				.radius(4000).strokeColor(Color.argb(50, 1, 1, 1))
+//				.fillColor(Color.argb(50, 1, 1, 1)).strokeWidth(25));
+    fun applyTo(map: AMap) {
+        map.addCircle(CircleOptions().apply {
+            center(this@UnifiedCircleOptions.center)
+            radius(this@UnifiedCircleOptions.radius.toDouble())
+            strokeColor(this@UnifiedCircleOptions.strokeColor.hexStringToColorInt() ?: Color.BLACK)
+            fillColor(this@UnifiedCircleOptions.fillColor.hexStringToColorInt() ?: Color.BLACK)
+            strokeWidth(this@UnifiedCircleOptions.strokeWidth.toFloat())
+        })
+    }
+
+}
 class UnifiedUiSettings(
         /// 是否允许显示缩放按钮
         private val isZoomControlsEnabled: Boolean,
