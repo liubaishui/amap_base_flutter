@@ -5,12 +5,12 @@ author: yohom <382146139@qq.com>
 homepage: https://github.com/yohom/amap_base_flutter
 
 environment:
-  sdk: ">=2.0.0-dev.68.0 <3.0.0"
+  sdk: '>=2.0.0-dev.68.0 <3.0.0'
 
 dependencies:
   flutter:
     sdk: flutter
-  amap_base_core: ^0.0.3
+  amap_base_core: ^0.0.5
 #  amap_base_core:
 #    path: ../core
 

@@ -37,6 +37,28 @@ class LatLng {
           latitude == other.latitude &&
           longitude == other.longitude;
 
+  LatLng operator +(LatLng other) {
+    return LatLng(
+      latitude + other?.latitude ?? 0,
+      longitude + other?.longitude ?? 0,
+    );
+  }
+
+  LatLng operator -(LatLng other) {
+    return LatLng(
+      latitude - other?.latitude ?? 0,
+      longitude - other?.longitude ?? 0,
+    );
+  }
+
+  LatLng operator *(int multiplier) {
+    return LatLng(latitude * multiplier ?? 1, longitude * multiplier ?? 1);
+  }
+
+  LatLng operator /(int divider) {
+    return LatLng(latitude / divider ?? 1, longitude / divider ?? 1);
+  }
+
   @override
   int get hashCode => latitude.hashCode ^ longitude.hashCode;
 
